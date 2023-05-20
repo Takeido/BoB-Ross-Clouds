@@ -1,0 +1,55 @@
+			### TABS
+
+# Military
+				blockoverride "second_button" {
+					text = "MILITARY"
+				}
+				blockoverride "second_button_tooltip" {
+					tooltip = "MILITARY"
+				}
+				blockoverride "second_button_background" {
+					background = {
+						margin = { 0 -2 }
+						using = fade_right_entry_fancy_header_colored
+						using = Color_Red
+					}
+				}
+				blockoverride "second_button_click" {
+					onclick = "[InformationPanel.SelectTab('military')]"
+				}
+				blockoverride "second_button_visibility" {
+					visible = "[InformationPanel.IsTabSelected('military')]"
+				}
+				blockoverride "second_button_visibility_checked" {
+					visible = "[Not( InformationPanel.IsTabSelected('military') )]"
+				}
+				blockoverride "second_button_selected" {
+					text = "MILITARY"
+				}
+				blockoverride "second_button_background_selected" {
+					background = {
+						using = fade_right_entry_fancy_header_colored
+						using = Color_Red
+					}
+				}
+								### ICON SHOWING WHERE TECH IS BEING TECHED.
+				# military
+				blockoverride "second_button_icon" {
+					
+					container = {
+						parentanchor = vcenter
+						# light bulb
+						visible = "[ObjectsEqual(Technology.GetCategoryName, 'Military')]"
+						
+						icon = {
+							using = rotate_glow_animation_02
+							size = { 60 60 }
+							parentanchor = center
+						}
+						icon = {
+							texture = "gfx/interface/icons/generic_icons/innovation.dds"
+							size = { 30 30 }
+							parentanchor = center
+						}
+					}
+				}
