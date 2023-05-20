@@ -310,12 +310,12 @@ types tech_tree
 					}
 				}
 
-				# Military
+				# Army
 				blockoverride "second_button" {
-					text = "MILITARY"
+					text = "Army"
 				}
 				blockoverride "second_button_tooltip" {
-					tooltip = "MILITARY"
+					tooltip = "Army"
 				}
 				blockoverride "second_button_background" {
 					background = {
@@ -325,16 +325,16 @@ types tech_tree
 					}
 				}
 				blockoverride "second_button_click" {
-					onclick = "[InformationPanel.SelectTab('military')]"
+					onclick = "[InformationPanel.SelectTab('Army')]"
 				}
 				blockoverride "second_button_visibility" {
-					visible = "[InformationPanel.IsTabSelected('military')]"
+					visible = "[InformationPanel.IsTabSelected('Army')]"
 				}
 				blockoverride "second_button_visibility_checked" {
-					visible = "[Not( InformationPanel.IsTabSelected('military') )]"
+					visible = "[Not( InformationPanel.IsTabSelected('Army') )]"
 				}
 				blockoverride "second_button_selected" {
-					text = "MILITARY"
+					text = "Army"
 				}
 				blockoverride "second_button_background_selected" {
 					background = {
@@ -399,13 +399,13 @@ types tech_tree
 						}
 					}
 				}
-				# military
+				# Army
 				blockoverride "second_button_icon" {
 					
 					container = {
 						parentanchor = vcenter
 						# light bulb
-						visible = "[ObjectsEqual(Technology.GetCategoryName, 'Military')]"
+						visible = "[ObjectsEqual(Technology.GetCategoryName, 'Army')]"
 						
 						icon = {
 							using = rotate_glow_animation_02
@@ -459,8 +459,8 @@ types tech_tree
 				background = {
 					using = illu_alpha
 					fittype = center
-					texture = "gfx/interface/illustrations/tech_tree/illustration_tech_military.dds"
-					visible = "[InformationPanel.IsTabSelected('military')]"
+					texture = "gfx/interface/illustrations/tech_tree/illustration_tech_Army.dds"
+					visible = "[InformationPanel.IsTabSelected('Army')]"
 					using = default_content_fade
 				}
 				background = {
@@ -508,16 +508,16 @@ types tech_tree
 					}
 				}
 				tech_tree_graph = {
-					name = "tech_tree_panel_military"
-					visible = "[InformationPanel.IsTabSelected('military')]"
+					name = "tech_tree_panel_Army"
+					visible = "[InformationPanel.IsTabSelected('Army')]"
 					using = default_content_fade
 
 					blockoverride "datamodel_lines" {
-						datamodel = "[TechTreePanel.GetMilitaryTechTreeLines]"
+						datamodel = "[TechTreePanel.GetArmyTechTreeLines]"
 					}
 
 					blockoverride "datamodel_items" {
-						datamodel = "[TechTreePanel.GetMilitaryTechTreeItems]"
+						datamodel = "[TechTreePanel.GetArmyTechTreeItems]"
 					}
 
 					blockoverride "extra_lines" {
@@ -539,7 +539,7 @@ types tech_tree
 					}
 
 					blockoverride "starting_pan_position" {
-						pan_position = "[GetDefine('NGUI', 'TECH_TREE_MILITARY_INITIAL_POSITION')]"
+						pan_position = "[GetDefine('NGUI', 'TECH_TREE_Army_INITIAL_POSITION')]"
 					}
 				}
 				tech_tree_graph = {
@@ -588,9 +588,9 @@ types tech_tree
 						size = { 42 42 }
 					}
 					button_icon_reset = {
-						visible = "[InformationPanel.IsTabSelected('military')]"
+						visible = "[InformationPanel.IsTabSelected('Army')]"
 						tooltip = "TOOLTIP_RESET"
-						onclick = "[TechTreePanel.ResetMilitaryView]"
+						onclick = "[TechTreePanel.ResetArmyView]"
 						size = { 42 42 }
 					}
 					button_icon_reset = {

@@ -53,3 +53,56 @@
 						}
 					}
 				}
+				
+				### CONTENT
+				### ILLUSTRATIONS
+				background = {
+					using = illu_alpha
+					fittype = center
+					texture = "gfx/interface/illustrations/tech_tree/illustration_tech_military.dds"
+					visible = "[InformationPanel.IsTabSelected('military')]"
+					using = default_content_fade
+					
+					### TECH TREES
+					tech_tree_graph = {
+					name = "tech_tree_panel_military"
+					visible = "[InformationPanel.IsTabSelected('military')]"
+					using = default_content_fade
+
+					blockoverride "datamodel_lines" {
+						datamodel = "[TechTreePanel.GetMilitaryTechTreeLines]"
+					}
+
+					blockoverride "datamodel_items" {
+						datamodel = "[TechTreePanel.GetMilitaryTechTreeItems]"
+					}
+
+					blockoverride "extra_lines" {
+						icon = {
+							using = tech_tree_divider
+							position = { 0 -100 }
+							size = { 200% 1830 }
+						}
+						icon = {
+							using = tech_tree_divider
+							position = { 0 2650 }
+							size = { 200% 960 }
+						}
+						icon = {
+							using = tech_tree_divider
+							position = { 0 4540 }
+							size = { 200% 950 }
+						}
+					}
+
+					blockoverride "starting_pan_position" {
+						pan_position = "[GetDefine('NGUI', 'TECH_TREE_MILITARY_INITIAL_POSITION')]"
+					}
+				}
+				
+				button_icon_reset = {
+						visible = "[InformationPanel.IsTabSelected('military')]"
+						tooltip = "TOOLTIP_RESET"
+						onclick = "[TechTreePanel.ResetMilitaryView]"
+						size = { 42 42 }
+					}
